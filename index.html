@@ -1,221 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Page with Secret Message Button</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 3em 1em;
+      box-sizing: border-box;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1em;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
 
-    <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    form {
+      display: flex;
+      gap: 0.8em;
+      margin-bottom: 2em;
+      width: 100%;
+      max-width: 600px;
+    }
 
-    <!-- My Css -->
-    <link rel="stylesheet" href="style.css" />
+    input[type="text"] {
+      flex: 1;
+      padding: 0.8em 1em;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      transition: box-shadow 0.25s ease;
+    }
 
-    
+    input[type="text"]:focus {
+      box-shadow: 0 0 8px 2px #2980b9;
+    }
 
-    <title>Web Profile | Gentha Muhamad Djamal</title>
-  </head>
-  <body id="home">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top" style="background-color: rgb(0, 170, 170)">
-      <div class="container">
-        <a class="navbar-brand" href="#">Gentha Djamal</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Akhir Navbar -->
+    button.submit-btn {
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      padding: 0 1.5em;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.25s ease;
+    }
 
-    <!-- Jumbotron -->
-    <section class="jumbotron text-center">
-      <img src="img/IMG_7063.JPG" alt="Gentha" width="200" class="rounded-circle img-thumbnail" />
-      <h1 class="display-4">Gentha Muhamad Djamal</h1>
-      <p class="lead">Informatics Engineering Students | Ahmad Dahlan University</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,128L30,144C60,160,120,192,180,218.7C240,245,300,267,360,229.3C420,192,480,96,540,90.7C600,85,660,171,720,208C780,245,840,235,900,213.3C960,192,1020,160,1080,170.7C1140,181,1200,235,1260,240C1320,245,1380,203,1410,181.3L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir Jumbotron -->
+    button.submit-btn:hover {
+      background-color: #1c5980;
+    }
 
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>About Me</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
-            <p>Undergraduate Informatics student in the Industrial Technology Faculty at the Ahmad Dahlan University, Yogyakarta</p>
-          </div>
-          <div class="col-md-4">
-            <p>I have an interest in the field of UI/UX, Web Development and also Data Administrator</p>
-          </div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#c8ffff"
-          fill-opacity="1"
-          d="M0,96L30,122.7C60,149,120,203,180,208C240,213,300,171,360,133.3C420,96,480,64,540,85.3C600,107,660,181,720,192C780,203,840,149,900,133.3C960,117,1020,139,1080,149.3C1140,160,1200,160,1260,160C1320,160,1380,160,1410,160L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir About -->
+    button#lihatKalimatBtn {
+      background: #34495e;
+      border: none;
+      color: #ecf0f1;
+      padding: 0.75em 2em;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      margin-top: 1em;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      display: none;
+      max-width: 250px;
+      text-align: center;
+    }
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>My Experience</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/1.jpg" class="card-img-top" alt="porto1" />
-              <div class="card-body">
-                <p class="card-text">Menjadi Asisten Praktikum Logika Informatika Tahun Ajaran 2020/2021</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/2.jpg" class="card-img-top" alt="porto2" />
-              <div class="card-body">
-                <p class="card-text">Mengikuti Kompetensi Fundamental Web Development oleh Dicoding</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/3.jpeg" class="card-img-top" alt="porto3" />
-              <div class="card-body">
-                <p class="card-text">Juara III Lomba Video Pendek Kreatif 4C Virtuality National Competition 2020</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/4.jpg" class="card-img-top" alt="porto4" />
-              <div class="card-body">
-                <p class="card-text">Mengikuti Rapat Kerja Nasional VI PERMIKOMNAS</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/5.jpg" class="card-img-top" alt="porto5" />
-              <div class="card-body">
-                <p class="card-text">Peserta Sekolah UI/UX oleh BEM Pendidikan Teknik Informatika Universitas Negeri Jakarta</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/6.jpg" class="card-img-top" alt="porto6" />
-              <div class="card-body">
-                <p class="card-text">Peserta Web Seminar Nasional "UI/UX" Kickstart : Principle of UI/UX & Visualize Your Design with Great Tool</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/Gentha Muhamad Djamal (1).png" class="card-img-top" alt="porto7" />
-              <div class="card-body">
-                <p class="card-text">Magang Design Graphic</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/Gentha Muhamad Djamal.png" class="card-img-top" alt="porto8" />
-              <div class="card-body">
-                <p class="card-text">Panitia Event LokPro Media sebagai Design Graphic</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/projects/harisenin.png" class="card-img-top" alt="porto9" />
-              <div class="card-body">
-                <p class="card-text">Tes sertifikasi UI/UX dan Product Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,128L30,154.7C60,181,120,235,180,240C240,245,300,203,360,170.7C420,139,480,117,540,128C600,139,660,181,720,197.3C780,213,840,203,900,170.7C960,139,1020,85,1080,96C1140,107,1200,181,1260,197.3C1320,213,1380,171,1410,149.3L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir Projects -->
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>Contact Me</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
-                <div class="mb-3">
-                    <label for="pesan" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="pesan" rows="3"></textarea>
-                  </div>
-              <button type="submit" class="btn text-white" style="background-color: #00aaaa">Kirim</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#00aaaa" fill-opacity="1" d="M0,32L30,58.7C60,85,120,139,180,138.7C240,139,300,85,360,80C420,75,480,117,540,144C600,171,660,181,720,170.7C780,160,840,128,900,128C960,128,1020,160,1080,149.3C1140,139,1200,85,1260,53.3C1320,21,1380,11,1410,5.3L1440,0L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
-    <!-- Akhir Contact -->
-    <!-- Footer -->
-    <footer style="background-color: #00aaaa" class="text-white text-center p-3">
-        <p>Created by <a href="https://www.instagram.com/gnthadjmal_/" class="text-white fw-bold" style="text-decoration: none;">Gentha Muhamad Djamal</a></p>
-    </footer>
-    <!-- Akhir Footer -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  </body>
+    button#lihatKalimatBtn:hover:not(:disabled) {
+      background: #3c597a;
+    }
+
+    button#lihatKalimatBtn:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    /* Modal styles */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+
+    .modal.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: #34495e;
+      padding: 2em;
+      border-radius: 12px;
+      max-width: 500px;
+      max-height: 80%;
+      overflow-y: auto;
+      color: #ecf0f1;
+      text-align: center;
+      font-size: 1.1rem;
+      box-shadow: 0 0 15px #2980b9;
+      position: relative;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #ecf0f1;
+      transition: color 0.2s ease;
+    }
+
+    .modal-close:hover {
+      color: #f39c12;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+      form {
+        flex-direction: column;
+      }
+      button.submit-btn {
+        width: 100%;
+      }
+      input[type="text"] {
+        width: 100%;
+      }
+      button#lihatKalimatBtn {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h3>tolong, berikan pendapat kalian ya ges mengenai saya selama kalian kenal saya, <br> bebas apa aja, saya menerima apa saja yang klean tuliss hehehe, thankyouuu!</h3>
+
+  <form id="sentenceForm" autocomplete="off">
+    <input type="text" id="sentenceInput" placeholder="Enter your sentence here..." required />
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <button id="lihatKalimatBtn" aria-label="Lihat kalimat yang sudah disubmit">
+    Lihat Kalimat
+  </button>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <h2 id="modalTitle" style="margin-top:0;">Kalimat yang disubmit</h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const keyword = 'pinggirsawah';
+      const form = document.getElementById('sentenceForm');
+      const input = document.getElementById('sentenceInput');
+      const lihatBtn = document.getElementById('lihatKalimatBtn');
+      const modal = document.getElementById('modal');
+      const modalText = document.getElementById('modalText');
+      const modalClose = document.getElementById('modalClose');
+
+      // Storage key to use in localStorage
+      const STORAGE_KEY = 'secretSentences';
+
+      // Sentences array (will be loaded from localStorage)
+      let sentences = [];
+
+      // Load sentences from localStorage on page load
+      function loadSentences() {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) {
+              sentences = parsed;
+            }
+          } catch (e) {
+            sentences = [];
+          }
+        }
+      }
+
+      // Save sentences to localStorage
+      function saveSentences() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(sentences));
+      }
+
+      // Show or hide "Lihat Kalimat" button based on sentences length
+      function updateLihatBtn() {
+        if (sentences.length > 0) {
+          lihatBtn.style.display = 'inline-block';
+          lihatBtn.disabled = false;
+        } else {
+          lihatBtn.style.display = 'none';
+          lihatBtn.disabled = true;
+        }
+      }
+
+      // Show modal with text content
+      function showModal(text) {
+        modalText.textContent = text;
+        modal.classList.add('active');
+        modalClose.focus();
+      }
+
+      // Close modal function
+      function closeModal() {
+        modal.classList.remove('active');
+      }
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Handle form submit
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const sentence = input.value.trim();
+        if (sentence) {
+          sentences.push(sentence);
+          saveSentences();
+          updateLihatBtn();
+          input.value = '';
+          input.focus();
+        }
+      });
+
+      // Handle "Lihat Kalimat" button click
+      lihatBtn.addEventListener('click', () => {
+        const enteredKey = prompt('Masukkan kata kunci untuk melihat kalimat:');
+        if (enteredKey === keyword) {
+          showModal(sentences.join('\n\n'));
+        } else if (enteredKey !== null) {
+          alert('Kata kunci salah!');
+        }
+      });
+
+      // Initialization
+      loadSentences();
+      updateLihatBtn();
+
+    })();
+  </script>
+</body>
 </html>
+
